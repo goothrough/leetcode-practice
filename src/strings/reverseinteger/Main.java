@@ -17,16 +17,13 @@ class Solution {
 
 		long reversedX = 0;
 
-		int len = (int) (Math.log10(Math.abs(x)) + 1);
-
-		for (int i = 0; i < len; i++) {
+		while (x != 0) {
 			int tmp = x % 10;
-			reversedX += tmp * Math.pow(10, len - 1 - i);
+			reversedX = reversedX * 10 + tmp;
 			x = x / 10;
-		}
-
-		if (reversedX < -1 * Math.pow(2, 31) || Math.pow(2, 31) - 1 < reversedX) {
-			return 0;
+			if (reversedX < Integer.MIN_VALUE || Integer.MAX_VALUE < reversedX) {
+				return 0;
+			}
 		}
 
 		return (int) reversedX;
