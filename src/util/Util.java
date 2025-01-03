@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Util {
 	public static void main(String[] args) {
-
 		System.out.println("Title:");
 
 		Scanner sc = new Scanner(System.in);
@@ -15,6 +14,5 @@ public class Util {
 		System.out.println(title);
 
 		sc.close();
-
 	}
 }
